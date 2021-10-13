@@ -83,7 +83,7 @@ accounts_struct! {
     DepositAccountsMeta, DepositAccountsInfo {
         pub anchor {
             is_signer: false,
-            is_writable: true,
+            is_writable: false,
         },
         pub lido {
             is_signer: false,
@@ -98,6 +98,18 @@ accounts_struct! {
             is_writable: false,
         },
         pub to_reserve_account {
+            is_signer: false,
+            is_writable: true,
+        },
+        pub b_sol_user_account {
+            is_signer: false,
+            is_writable: true,
+        },
+        pub b_sol_mint {
+            is_signer: false,
+            is_writable: true,
+        },
+        pub b_sol_mint_authority {
             is_signer: false,
             is_writable: true,
         },

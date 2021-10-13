@@ -3,6 +3,7 @@
 
 #[cfg(not(feature = "no-entrypoint"))]
 pub mod entrypoint;
+mod error;
 mod instruction;
 mod logic;
 mod processor;
