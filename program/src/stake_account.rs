@@ -198,11 +198,7 @@ impl StakeAccount {
         // to true. See also https://github.com/ChorusOne/solido/issues/184#issuecomment-861653316.
         // let fix_stake_deactivate = true;
 
-        let solana_program::stake_history::StakeHistoryEntry {
-            effective: mut active_lamports,
-            activating: activating_lamports,
-            deactivating: deactivating_lamports,
-        } = stake
+        let (mut active_lamports, activating_lamports, deactivating_lamports) = stake
             .delegation
             .stake_activating_and_deactivating(target_epoch, history);
 
