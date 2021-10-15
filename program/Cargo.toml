@@ -4,6 +4,7 @@ license = "GPL-3.0"
 edition = "2018"
 name = "lido"
 version = "1.1.0"
+description = "Lido for Solana is a Lido DAO-governed liquid staking protocol for the Solana blockchain."
 homepage = "https://github.com/aSolHQ/solido"
 repository = "https://github.com/aSolHQ/solido"
 
