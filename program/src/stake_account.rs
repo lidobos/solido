@@ -196,11 +196,15 @@ impl StakeAccount {
 
         // This toggle is a historical quirk in Solana and should always be set
         // to true. See also https://github.com/ChorusOne/solido/issues/184#issuecomment-861653316.
-        let fix_stake_deactivate = true;
+        // let fix_stake_deactivate = true;
 
-        let (mut active_lamports, activating_lamports, deactivating_lamports) = stake
+        let solana_program::stake_history::StakeHistoryEntry {
+            effective: mut active_lamports,
+            activating: activating_lamports,
+            deactivating: deactivating_lamports,
+        } = stake
             .delegation
-            .stake_activating_and_deactivating(target_epoch, history, fix_stake_deactivate);
+            .stake_activating_and_deactivating(target_epoch, history);
 
         // `stake_activating_and_deactivating` counts deactivating stake both as
         // part of the active lamports, and as part of the deactivating
